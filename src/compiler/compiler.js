@@ -52,11 +52,11 @@ function writeDefaultPages() {
       });
 }
 
-function compilePages(path) {
+function compilePages(p) {
     try {
-        if(fs.existsSync(path + "/pages")) {
+        if(fs.existsSync(p + "/pages")) {
             console.log("[ZJS] Compiling Pages...")
-            fs.readdir(path + "/pages", function (err, files) {
+            fs.readdir(p + "/pages", function (err, files) {
                 if (err) {
                     console.log("[ZJS] An Error Occured while trying to compile pages: " + err);
                 } 
@@ -72,11 +72,11 @@ function compilePages(path) {
                 console.log("[ZJS] Found " + pages.length + " pages")
                 
                 pages.forEach(page =>  {
-                    let p = path.join(path, page);
+                    let p2 = path.join(p, page);
                     
-                    let html = fileCompiler.compilePageToHTML(p)
+                    let html = fileCompiler.compilePageToHTML(p2)
 
-                    let name = p.split(".")[0]
+                    let name = p2.split(".")[0]
 
                     fs.writeFile('./public/' + name + ".html", html, err => {
                         if (err) {
