@@ -3,7 +3,7 @@ const fs = require('fs')
 function compile(path) {
     if(canCompile(path)) {
         resetBuildFolder()
-
+        writeDefaultPages()
         console.log("[ZJS] The Build Was Sucessful!")
 
     }
@@ -37,6 +37,15 @@ function resetBuildFolder() {
     }
     console.log("[ZJS] Creating Build Folder...")
     fs.mkdirSync("./public");
+}
+
+function writeDefaultPages() {
+    console.log("[ZJS] Writing Default Pages...")
+    fs.writeFile('./public/404.html', "ZJS - 404", err => {
+        if (err) {
+          console.error("[ZJS] Could not write default page : " + err);
+        }
+      });
 }
 
 module.exports = {canCompile: canCompile, compile: compile}
