@@ -2,4 +2,4 @@ function Page() {
     return "Hello World"
 }
 
-module.exports = Page
+module.exports = {Page}
