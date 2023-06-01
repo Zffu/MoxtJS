@@ -8,7 +8,8 @@ function compile(path) {
         }
     } catch (err) {
         console.error("[ZJS] The Target Folder was not found!")
+        return;
     }
 }
 
-module.exports = {compile}
+module.exports = {compile: compile}
