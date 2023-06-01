@@ -7,18 +7,19 @@ function compile(path) {
 
 
 function canCompile(path) {
-    const promise = new Promise((resolve, reject) => {
-        try {
-            if(fs.existsSync(path)) {
-                resolve({failed: false, message: "The Target Folder Exists!"})
-            }
+    try {
+        if(fs.existsSync(path)) {
+            console.log("[ZJS] Found Target Folder " + path)
+            return true;
         }
-        catch(error) {
-            reject({failed: true, message: "The Target Folder does not Exist!"})
+        else {
+            console.error("[ZJS] The Target Folder " + path + " was not found!")
+            return false;
         }
-    })
-
-    return promise;
+    } catch(err) {
+        console.error("[ZJS] The Target Folder " + path + " was not found!")
+        return false;
+    }
 }
 
 module.exports = {canCompile: canCompile, compile: compile}

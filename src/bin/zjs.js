@@ -21,12 +21,5 @@ if(command == "build") {
     console.log("[ZJS] Compiling path " + path)
 
     compiler.canCompile(path)
-    .then(data => {
-        console.log("[ZJS] " + data.message)
-    })
-    .catch(data => {
-        console.error("[ZJS] " + data.message)
-    })
-    
-
+        
 }
