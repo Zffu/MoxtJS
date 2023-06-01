@@ -73,7 +73,7 @@ function compilePages(p) {
                 
                 pages.forEach(page =>  {
 
-                    let p = path.join(__dirname, p)
+                    p = path.join(__dirname, p)
 
                     let p2 = path.join(p, page);
                     
