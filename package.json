@@ -14,7 +14,7 @@
         "zjs": "src/bin/zjs.js"
     },
     "scripts": {
-        "test-build": "npx tsc && npm install -g . && zjs build ./test"
+        "test-build": "npx tsc -p ./test && npm install -g . && zjs build ./test"
     },
     "dependencies": {
         "yargs": "17.7.2",

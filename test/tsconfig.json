@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {},
+    "files": [
+      "pages/index.ts"
+    ]
+  }
