@@ -71,9 +71,7 @@ function compilePages(p) {
 
                 console.log("[ZJS] Found " + pages.length + " pages")
                 
-                pages.forEach(page =>  {
-
-                    p = path.join(__dirname, p)
+                pages.forEach(page => {
 
                     let p2 = path.join(p, page);
                     

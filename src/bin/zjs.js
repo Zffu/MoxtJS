@@ -1,5 +1,5 @@
 #! /usr/bin/env node
-
+const path = require("path")
 const compiler = require("../compiler/compiler.js")
 
 
@@ -16,10 +16,10 @@ if(command == "build") {
         return;
     }
 
-    let path = process.argv[3];
+    let p = process.argv[3];
 
-    console.log("[ZJS] Compiling path " + path)
+    console.log("[ZJS] Compiling path " + p)
 
-    compiler.compile(path)
+    compiler.compile(path.join(__dirname, p))
         
 }
