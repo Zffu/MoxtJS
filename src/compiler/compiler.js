@@ -1,4 +1,7 @@
 const fs = require('fs')
+const path = require('path');
+const fileCompiler = require("./pageCompiler.js")
+
 
 function compile(path) {
     if(canCompile(path)) {
@@ -67,6 +70,22 @@ function compilePages() {
                 });
 
                 console.log("[ZJS] Found " + pages.length + " pages")
+                
+                pages.forEach(page =>  {
+                    let p = path.join(__dirname, page);
+                    
+                    let html = fileCompiler.compilePageToHTML(p)
+
+                    let name = p.split(".")[0]
+
+                    fs.writeFile('./public/' + name + ".html", html, err => {
+                        if (err) {
+                          console.error("[ZJS] Could not compile page " + name + " : " + err);
+                        }
+                      });
+
+                })
+
             });
         }
         else {

@@ -1,0 +1,3 @@
+function MyPage()  {
+    return "hello"
+}
