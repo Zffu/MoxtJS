@@ -1,3 +1,5 @@
-export default function MyPage() {
+function Page() {
     return "Hello World"
 }
+
+module.exports = Page
