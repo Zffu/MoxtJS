@@ -1,5 +1,5 @@
 function compilePageToHTML(path) {
-    var p = require(path).Page()
+    var p = require(path)
 
     return "<html>" + p + "</htm>"
 }
