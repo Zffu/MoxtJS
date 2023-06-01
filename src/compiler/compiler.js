@@ -73,7 +73,7 @@ function compilePages(p) {
                 
                 pages.forEach(page => {
 
-                    let p2 = path.join(p + "/pages", page);
+                    let p2 = path.join(path.resolve(p) + "/pages", page);
                     
                     let html = fileCompiler.compilePageToHTML(p2)
 
