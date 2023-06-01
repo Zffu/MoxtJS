@@ -56,7 +56,7 @@ function compilePages(path) {
     try {
         if(fs.existsSync(path + "/pages")) {
             console.log("[ZJS] Compiling Pages...")
-            fs.readdir(directoryPath, function (err, files) {
+            fs.readdir(path + "/pages", function (err, files) {
                 if (err) {
                     console.log("[ZJS] An Error Occured while trying to compile pages: " + err);
                 } 
