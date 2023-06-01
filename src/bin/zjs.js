@@ -20,6 +20,6 @@ if(command == "build") {
 
     console.log("[ZJS] Compiling path " + path)
 
-    compiler.canCompile(path)
+    compiler.compile(path)
         
 }

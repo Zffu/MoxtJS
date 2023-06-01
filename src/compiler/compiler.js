@@ -1,8 +1,12 @@
 const fs = require('fs')
 
 function compile(path) {
+    if(canCompile(path)) {
+        resetBuildFolder()
 
+        console.log("[ZJS] The Build Was Sucessful!")
 
+    }
 }
 
 
@@ -20,6 +24,19 @@ function canCompile(path) {
         console.error("[ZJS] The Target Folder " + path + " was not found!")
         return false;
     }
+}
+
+function resetBuildFolder() {
+    try {
+        if(fs.existsSync("./public")) {
+            console.log("[ZJS] Found Build Folder, Deleting...")
+            fs.rmSync(dir, { recursive: true, force: true });
+        }
+    } catch(err) {
+
+    }
+    console.log("[ZJS] Creating Build Folder...")
+    fs.mkdirSync("./public");
 }
 
 module.exports = {canCompile: canCompile, compile: compile}
