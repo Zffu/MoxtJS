@@ -11,4 +11,4 @@ function compile(path) {
     }
 }
 
-module.exports = compile
+module.exports = {compile}
