@@ -4,6 +4,7 @@ function compile(path) {
     if(canCompile(path)) {
         resetBuildFolder()
         writeDefaultPages()
+        compilePages()
         console.log("[ZJS] The Build Was Sucessful!")
 
     }
@@ -46,6 +47,35 @@ function writeDefaultPages() {
           console.error("[ZJS] Could not write default page : " + err);
         }
       });
+}
+
+function compilePages() {
+    try {
+        if(fs.existsSync("./public/pages")) {
+            console.log("[ZJS] Compiling Pages...")
+            fs.readdir(directoryPath, function (err, files) {
+                if (err) {
+                    console.log("[ZJS] An Error Occured while trying to compile pages: " + err);
+                } 
+                
+                let pages = []
+
+                files.forEach(function (file) {
+                    if(file.endsWith(".js")  || file.endsWith(".ts")) {
+                        pages.push(file)
+                    }
+                });
+
+                console.log("[ZJS] Found " + pages.length + " pages")
+            });
+        }
+        else {
+            console.log("[ZJS] The pages folder does not exist!")
+            return;
+        }
+    } catch(err) {
+        console.log("[ZJS] An Error Occured while trying to compile pages: " + err)
+    }
 }
 
 module.exports = {canCompile: canCompile, compile: compile}
