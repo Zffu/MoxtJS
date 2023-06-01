@@ -77,7 +77,7 @@ function compilePages(p) {
                     
                     let html = fileCompiler.compilePageToHTML(p2)
 
-                    let name = p2.split(".")[0]
+                    let name = page.split(".")[0]
 
                     fs.writeFile('./public/' + name + ".html", html, err => {
                         if (err) {
