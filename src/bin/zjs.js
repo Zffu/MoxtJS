@@ -1,5 +1,8 @@
 #! /usr/bin/env node
 
+const compiler = require("../compiler/compiler.js")
+
+
 if(process.argv.length < 3) {
     return;
 }
@@ -12,6 +15,8 @@ if(command == "build") {
     }
 
     let path = process.argv[3];
+
+    compiler.compile(path)
 
 
 }
