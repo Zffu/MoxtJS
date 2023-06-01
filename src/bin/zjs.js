@@ -20,6 +20,6 @@ if(command == "build") {
 
     console.log("[ZJS] Compiling path " + p)
 
-    compiler.compile(path.join(__dirname, p))
+    compiler.compile(p)
         
 }
