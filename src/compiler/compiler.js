@@ -17,6 +17,8 @@ function canCompile(path) {
             reject({failed: true, message: "The Target Folder does not Exist!"})
         }
     })
+
+    return promise;
 }
 
 module.exports = {canCompile: canCompile, compile: compile}
