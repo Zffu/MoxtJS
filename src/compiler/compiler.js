@@ -7,7 +7,7 @@ function compile(path) {
     if(canCompile(path)) {
         resetBuildFolder()
         writeDefaultPages()
-        compilePages()
+        compilePages(path)
         console.log("[ZJS] The Build Was Sucessful!")
 
     }
@@ -52,9 +52,9 @@ function writeDefaultPages() {
       });
 }
 
-function compilePages() {
+function compilePages(path) {
     try {
-        if(fs.existsSync("./pages")) {
+        if(fs.existsSync(path + "/pages")) {
             console.log("[ZJS] Compiling Pages...")
             fs.readdir(directoryPath, function (err, files) {
                 if (err) {
@@ -72,7 +72,7 @@ function compilePages() {
                 console.log("[ZJS] Found " + pages.length + " pages")
                 
                 pages.forEach(page =>  {
-                    let p = path.join(__dirname, page);
+                    let p = path.join(path, page);
                     
                     let html = fileCompiler.compilePageToHTML(p)
 
