@@ -19,6 +19,14 @@ if(command == "build") {
     let path = process.argv[3];
 
     console.log("[ZJS] Compiling path " + path)
-    compiler.compile(path)
+
+    compiler.canCompile(path)
+    .then(data => {
+        console.log("[ZJS] " + data.message)
+    })
+    .catch(data => {
+        console.error("[ZJS] " + data.message)
+    })
+    
 
 }
