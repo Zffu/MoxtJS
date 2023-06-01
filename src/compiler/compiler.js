@@ -64,7 +64,7 @@ function compilePages(p) {
                 let pages = []
 
                 files.forEach(function (file) {
-                    if(file.endsWith(".js")  || file.endsWith(".ts")) {
+                    if(file.endsWith(".js")  || file.endsWith(".ts") || file.endsWith(".tsx")) {
                         pages.push(file)
                     }
                 });
