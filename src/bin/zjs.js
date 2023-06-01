@@ -18,6 +18,8 @@ if(command == "build") {
 
     let p = process.argv[3];
 
+    p = path.join(".", p)
+
     console.log("[ZJS] Compiling path " + p)
 
     compiler.compile(p)

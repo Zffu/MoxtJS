@@ -54,9 +54,9 @@ function writeDefaultPages() {
 
 function compilePages(p) {
     try {
-        if(fs.existsSync("/"+ p + "/pages")) {
+        if(fs.existsSync(p + "/pages")) {
             console.log("[ZJS] Compiling Pages...")
-            fs.readdir("/"+ p + "/pages", function (err, files) {
+            fs.readdir(p + "/pages", function (err, files) {
                 if (err) {
                     console.log("[ZJS] An Error Occured while trying to compile pages: " + err);
                 } 
