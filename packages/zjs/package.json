@@ -1,7 +1,7 @@
 {
     "name": "@zjs",
     "description": "@zjs",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "main": "src/index.js",
     "license": "MIT",
     "repository": {
