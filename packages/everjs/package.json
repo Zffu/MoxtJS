@@ -1,21 +1,21 @@
 {
-    "name": "shadows.js",
-    "description": "@shadowsjs",
+    "name": "everjs",
+    "description": "@everjs",
     "version": "0.0.1",
     "main": "src/index.js",
     "license": "MIT",
     "repository": {
-        "url": "https://github.com/Zffu/shadowjs",
-        "directory": "packages/shadowjs"
+        "url": "https://github.com/Zffu/everjs",
+        "directory": "packages/everjs"
     },
-    "bugs": "https://github.com/Zffu/shadowjs/issues",
+    "bugs": "https://github.com/Zffu/everjs/issues",
     "homepage": "https://zffu.ml",
     "types": "src/index.js",
     "files": [
 
     ],
     "bin": {
-        "shadows": "src/bin/shadows.js"
+        "ever": "src/bin/ever.js"
     },
     "scripts": {
         "test": "",
