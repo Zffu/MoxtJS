@@ -1,14 +1,14 @@
 {
-    "name": "@zjs/compiler-core",
-    "description": "@zjs/compiler-core",
+    "name": "@shadowjs/compiler-core",
+    "description": "@shadowjs/compiler-core",
     "version": "1.0.0",
     "main": "src/index.js",
     "license": "MIT",
     "repository": {
-        "url": "https://github.com/Zffu/zjs",
-        "directory": "packages/zjs"
+        "url": "https://github.com/Zffu/shadowjs",
+        "directory": "packages/shadowjs"
     },
-    "bugs": "https://github.com/Zffu/zjs/issues",
+    "bugs": "https://github.com/Zffu/shadowjs/issues",
     "homepage": "https://zffu.ml",
     "types": "src/index.js",
     "files": [

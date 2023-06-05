@@ -1,21 +1,21 @@
 {
-    "name": "zjs",
-    "description": "@zjs",
+    "name": "shadowjs",
+    "description": "@shadowjs",
     "version": "0.0.1",
     "main": "src/index.js",
     "license": "MIT",
     "repository": {
-        "url": "https://github.com/Zffu/zjs",
-        "directory": "packages/zjs"
+        "url": "https://github.com/Zffu/shadowjs",
+        "directory": "packages/shadowjs"
     },
-    "bugs": "https://github.com/Zffu/zjs/issues",
+    "bugs": "https://github.com/Zffu/shadowjs/issues",
     "homepage": "https://zffu.ml",
     "types": "src/index.js",
     "files": [
 
     ],
     "bin": {
-        "zjs": "src/bin/zjs.js"
+        "shadow": "src/bin/shadow.js"
     },
     "scripts": {
         "test": "",

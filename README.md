@@ -1,2 +1,3 @@
-# zjs
-Z.JS is a language similar to NextJs but aimed for performance
+# ShadowJS
+ShadowJS is a NodeJS web framework made to be easy to use, light and fast
+
