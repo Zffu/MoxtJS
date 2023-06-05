@@ -1,6 +1,6 @@
 {
-    "name": "noxt.js",
-    "description": "@noxt.js",
+    "name": "moxt.js",
+    "description": "@moxt.js",
     "version": "0.0.1",
     "main": "src/index.js",
     "license": "MIT",
