@@ -1,5 +1,5 @@
 {
-    "name": "ZJS Compiler",
+    "name": "@zjs/compiler",
     "description": "@zjs/compiler",
     "version": "1.0.0",
     "main": "src/index.js",
