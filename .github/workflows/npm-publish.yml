@@ -26,7 +26,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          registry-url: https://registry.npmjs.org/
       - run: echo Publishing Core... && cd packages/zjs && npm publish
       - run: echo Publishing Compiler Core... && cd packages/zjs-compiler-core && npm publish
         env:
