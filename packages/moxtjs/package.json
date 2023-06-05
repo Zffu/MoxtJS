@@ -5,17 +5,17 @@
     "main": "src/index.js",
     "license": "MIT",
     "repository": {
-        "url": "https://github.com/Zffu/everyjs",
-        "directory": "packages/everyjs"
+        "url": "https://github.com/Zffu/moxtjs",
+        "directory": "packages/moxtjs"
     },
-    "bugs": "https://github.com/Zffu/everyjs/issues",
+    "bugs": "https://github.com/Zffu/moxtjs/issues",
     "homepage": "https://zffu.ml",
     "types": "src/index.js",
     "files": [
 
     ],
     "bin": {
-        "every": "src/bin/every.js"
+        "moxt": "src/bin/moxt.js"
     },
     "scripts": {
         "test": "",
