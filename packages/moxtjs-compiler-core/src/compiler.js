@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path');
 const fileCompiler = require("./pageCompiler.js")
+const logger = require("moxt.js/utils/logger")
 
 
 function compile(path) {
@@ -8,7 +9,7 @@ function compile(path) {
         resetBuildFolder()
         writeDefaultPages()
         compilePages(path)
-        console.log("[Every] The Build Was Sucessful!")
+        logger.info("The Build was Sucessful")
 
     }
 }
