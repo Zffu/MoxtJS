@@ -1,14 +1,14 @@
 {
-    "name": "@everjs/compiler-core",
-    "description": "@everjs/compiler-core",
+    "name": "@everyjs/compiler-core",
+    "description": "@everyjs/compiler-core",
     "version": "1.0.0",
     "main": "src/index.js",
     "license": "MIT",
     "repository": {
-        "url": "https://github.com/Zffu/everjs",
-        "directory": "packages/everjs"
+        "url": "https://github.com/Zffu/everyjs",
+        "directory": "packages/everyjs"
     },
-    "bugs": "https://github.com/Zffu/everjs/issues",
+    "bugs": "https://github.com/Zffu/everyjs/issues",
     "homepage": "https://zffu.ml",
     "types": "src/index.js",
     "files": [

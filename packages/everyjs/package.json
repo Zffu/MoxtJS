@@ -1,21 +1,21 @@
 {
-    "name": "everjs",
-    "description": "@everjs",
+    "name": "everyjs",
+    "description": "@everyjs",
     "version": "0.0.1",
     "main": "src/index.js",
     "license": "MIT",
     "repository": {
-        "url": "https://github.com/Zffu/everjs",
-        "directory": "packages/everjs"
+        "url": "https://github.com/Zffu/everyjs",
+        "directory": "packages/everyjs"
     },
-    "bugs": "https://github.com/Zffu/everjs/issues",
+    "bugs": "https://github.com/Zffu/everyjs/issues",
     "homepage": "https://zffu.ml",
     "types": "src/index.js",
     "files": [
 
     ],
     "bin": {
-        "ever": "src/bin/ever.js"
+        "every": "src/bin/every.js"
     },
     "scripts": {
         "test": "",

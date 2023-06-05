@@ -1,4 +1,4 @@
-name: Shadow Publish to NPM
+name: EveryJS Publish to NPM
 on:
   release:
     types: [created]
@@ -14,14 +14,14 @@ jobs:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies and build 🔧
-        run: cd packages/everjs && npm i && npm run build
+        run: cd packages/everyjs && npm i && npm run build
       - name: Install Npm
-        run: cd packages/everjs && npm i -g npm@9 && npm i -g pnpm@7.24.3
+        run: cd packages/everyjs && npm i -g npm@9 && npm i -g pnpm@7.24.3
       - name: Creating .npmrc
-        run: cd packages/everjs && echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+        run: cd packages/everyjs && echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
       - name: Publish package on NPM 📦
-        run: cd packages/everjs && npm publish
+        run: cd packages/everyjs && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
