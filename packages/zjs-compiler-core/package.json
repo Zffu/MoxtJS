@@ -1,0 +1,23 @@
+{
+    "name": "ZJS Compiler",
+    "description": "@zjs/compiler",
+    "version": "1.0.0",
+    "main": "src/index.js",
+    "license": "MIT",
+    "repository": {
+        "url": "https://github.com/Zffu/zjs",
+        "directory": "packages/zjs"
+    },
+    "bugs": "https://github.com/Zffu/zjs/issues",
+    "homepage": "https://zffu.ml",
+    "types": "src/index.js",
+    "files": [
+
+    ],
+    "scripts": {
+    },
+    "dependencies": {
+        "yargs": "17.7.2",
+        "typescript": "5.0.4"
+    }
+}

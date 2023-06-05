@@ -1,9 +1,13 @@
 {
-    "name": "zjs",
+    "name": "ZJS",
+    "description": "@zjs",
     "version": "1.0.0",
     "main": "src/index.js",
     "license": "MIT",
-    "repository": "Zffu/zjs",
+    "repository": {
+        "url": "https://github.com/Zffu/zjs",
+        "directory": "packages/zjs"
+    },
     "bugs": "https://github.com/Zffu/zjs/issues",
     "homepage": "https://zffu.ml",
     "types": "src/index.js",
@@ -14,7 +18,6 @@
         "zjs": "src/bin/zjs.js"
     },
     "scripts": {
-        "test-build": "npx tsc -p ./test && npm install -g . && zjs build ./test"
     },
     "dependencies": {
         "yargs": "17.7.2",
