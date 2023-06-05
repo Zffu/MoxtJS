@@ -4,7 +4,7 @@ const compiler = require("../compiler/compiler.js")
 
 
 if(process.argv.length < 3) {
-    console.error("[Shadow] Invalid Command Usage! : shadow <command> [path]")
+    console.error("[Shadows] Invalid Command Usage! : shadows <command> [path]")
     return;
 }
 
@@ -12,13 +12,13 @@ const command = process.argv[2]
 
 if(command == "build") {
     if(process.argv.length != 4) {
-        console.error("[Shadow] Invalid Command Usage! : shadow build <path>")
+        console.error("[Shadows] Invalid Command Usage! : shadows build <path>")
         return;
     }
 
     let p = process.argv[3];
 
-    console.log("[Shadow] Compiling path " + p)
+    console.log("[Shadows] Compiling path " + p)
 
     compiler.compile(p)
         

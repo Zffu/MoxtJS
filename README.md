@@ -1,3 +1,3 @@
-# ShadowJS
-ShadowJS is a NodeJS web framework made to be easy to use, light and fast
+# ShadowsJS
+ShadowsJS is a NodeJS web framework made to be easy to use, light and fast
 

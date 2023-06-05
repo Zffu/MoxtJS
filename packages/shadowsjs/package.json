@@ -1,6 +1,6 @@
 {
-    "name": "shadowjs",
-    "description": "@shadowjs",
+    "name": "shadowsjs",
+    "description": "@shadowsjs",
     "version": "0.0.1",
     "main": "src/index.js",
     "license": "MIT",
@@ -15,7 +15,7 @@
 
     ],
     "bin": {
-        "shadow": "src/bin/shadow.js"
+        "shadows": "src/bin/shadows.js"
     },
     "scripts": {
         "test": "",
