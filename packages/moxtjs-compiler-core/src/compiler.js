@@ -9,8 +9,9 @@ function compile(path) {
         resetBuildFolder()
         writeDefaultPages()
         compilePages(path)
-        logger.info("The Build was Sucessful")
-
+        logger.log("The Build was Sucessful")
+    } else {
+        logger.error("The Website cannot be compiled! Exiting...")
     }
 }
 
@@ -18,15 +19,15 @@ function compile(path) {
 function canCompile(path) {
     try {
         if(fs.existsSync(path)) {
-            console.log("[Every] Found Target Folder " + path)
+            logger.log("The Target Folder (" + path + ") was found!")
             return true;
         }
         else {
-            console.error("[Every] The Target Folder " + path + " was not found!")
+            logger.error("The Target Folder (" + path + ") was not found!")
             return false;
         }
     } catch(err) {
-        console.error("[Every] The Target Folder " + path + " was not found!")
+        logger.error("The Target Folder (" + path + ") was not found!")
         return false;
     }
 }
@@ -34,21 +35,22 @@ function canCompile(path) {
 function resetBuildFolder() {
     try {
         if(fs.existsSync("./public")) {
-            console.log("[Every] Found Build Folder, Deleting...")
+            logger.log("Found Build Folder, Deleting...")
             fs.rmSync(dir, { recursive: true, force: true });
         }
     } catch(err) {
 
     }
-    console.log("[Every] Creating Build Folder...")
+    logger.log("Creating Build Folder...")
     fs.mkdirSync("./public");
 }
 
 function writeDefaultPages() {
-    console.log("[Every] Writing Default Pages...")
-    fs.writeFile('./public/404.html', "ZJS - 404", err => {
+    logger.log("Adding Default Pages")
+    fs.writeFile('./public/404.html', "MuxtJS - 404", err => {
         if (err) {
-          console.error("[Every] Could not write default page : " + err);
+          logger.erorr("Could not add Default Pages: " + err)
+          return false;
         }
       });
 }
@@ -56,10 +58,10 @@ function writeDefaultPages() {
 function compilePages(p) {
     try {
         if(fs.existsSync(p + "/pages")) {
-            console.log("[Every] Compiling Pages...")
+            logger.log("Detected Pages, Building Pages..")
             fs.readdir(p + "/pages", function (err, files) {
                 if (err) {
-                    console.log("[Every] An Error Occured while trying to compile pages: " + err);
+                     console.error("An Error while trying to compile pages: " + err)
                 } 
                 
                 let pages = []
@@ -70,7 +72,7 @@ function compilePages(p) {
                     }
                 });
 
-                console.log("[Every] Found " + pages.length + " pages")
+                logger.info("Found " + pages.length + " pages")
                 
                 pages.forEach(page => {
 
@@ -82,7 +84,7 @@ function compilePages(p) {
 
                     fs.writeFile('./public/' + name + ".html", html, err => {
                         if (err) {
-                          console.error("[Every] Could not compile page " + name + " : " + err);
+                          logger.error("Could not compile page " + name + "!")
                         }
                       });
 
@@ -91,11 +93,11 @@ function compilePages(p) {
             });
         }
         else {
-            console.log("[Every] The pages folder does not exist!")
-            return;
+            console.warn("The Pages were not detected! Skipping...")
+            return true;
         }
     } catch(err) {
-        console.log("[Every] An Error Occured while trying to compile pages: " + err)
+        console.error("An Error Occured while compiling pages: " + err)
     }
 }
 
