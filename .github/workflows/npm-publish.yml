@@ -34,7 +34,7 @@ jobs:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
           scope: "@Zffu"
-      - run: echo Publishing Core... && cd packages/zjs && npm publish
-      - run: echo Publishing Compiler Core... && cd packages/zjs-compiler-core && npm publish
+      - run: echo Publishing Core... && cd packages/zjs && npm publish --access public
+      - run: echo Publishing Compiler Core... && cd packages/zjs-compiler-core && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_SECRET}}
