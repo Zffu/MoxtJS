@@ -18,6 +18,7 @@
         "zjs": "src/bin/zjs.js"
     },
     "scripts": {
+        "test": ""
     },
     "dependencies": {
         "yargs": "17.7.2",
