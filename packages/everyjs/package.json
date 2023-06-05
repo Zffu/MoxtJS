@@ -1,6 +1,6 @@
 {
-    "name": "everyjs",
-    "description": "@everyjs",
+    "name": "noxt.js",
+    "description": "@noxt.js",
     "version": "0.0.1",
     "main": "src/index.js",
     "license": "MIT",
