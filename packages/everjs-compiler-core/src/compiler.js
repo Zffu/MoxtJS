@@ -8,7 +8,7 @@ function compile(path) {
         resetBuildFolder()
         writeDefaultPages()
         compilePages(path)
-        console.log("[Shadows] The Build Was Sucessful!")
+        console.log("[Ever] The Build Was Sucessful!")
 
     }
 }
@@ -17,15 +17,15 @@ function compile(path) {
 function canCompile(path) {
     try {
         if(fs.existsSync(path)) {
-            console.log("[Shadows] Found Target Folder " + path)
+            console.log("[Ever] Found Target Folder " + path)
             return true;
         }
         else {
-            console.error("[Shadows] The Target Folder " + path + " was not found!")
+            console.error("[Ever] The Target Folder " + path + " was not found!")
             return false;
         }
     } catch(err) {
-        console.error("[Shadows] The Target Folder " + path + " was not found!")
+        console.error("[Ever] The Target Folder " + path + " was not found!")
         return false;
     }
 }
@@ -33,21 +33,21 @@ function canCompile(path) {
 function resetBuildFolder() {
     try {
         if(fs.existsSync("./public")) {
-            console.log("[Shadows] Found Build Folder, Deleting...")
+            console.log("[Ever] Found Build Folder, Deleting...")
             fs.rmSync(dir, { recursive: true, force: true });
         }
     } catch(err) {
 
     }
-    console.log("[Shadows] Creating Build Folder...")
+    console.log("[Ever] Creating Build Folder...")
     fs.mkdirSync("./public");
 }
 
 function writeDefaultPages() {
-    console.log("[Shadows] Writing Default Pages...")
+    console.log("[Ever] Writing Default Pages...")
     fs.writeFile('./public/404.html', "ZJS - 404", err => {
         if (err) {
-          console.error("[Shadows] Could not write default page : " + err);
+          console.error("[Ever] Could not write default page : " + err);
         }
       });
 }
@@ -55,7 +55,7 @@ function writeDefaultPages() {
 function compilePages(p) {
     try {
         if(fs.existsSync(p + "/pages")) {
-            console.log("[Shadows] Compiling Pages...")
+            console.log("[Ever] Compiling Pages...")
             fs.readdir(p + "/pages", function (err, files) {
                 if (err) {
                     console.log("[Shadows] An Error Occured while trying to compile pages: " + err);
@@ -69,7 +69,7 @@ function compilePages(p) {
                     }
                 });
 
-                console.log("[Shadows] Found " + pages.length + " pages")
+                console.log("[Ever] Found " + pages.length + " pages")
                 
                 pages.forEach(page => {
 
@@ -81,7 +81,7 @@ function compilePages(p) {
 
                     fs.writeFile('./public/' + name + ".html", html, err => {
                         if (err) {
-                          console.error("[Shadows] Could not compile page " + name + " : " + err);
+                          console.error("[Ever] Could not compile page " + name + " : " + err);
                         }
                       });
 
@@ -90,11 +90,11 @@ function compilePages(p) {
             });
         }
         else {
-            console.log("[Shadows] The pages folder does not exist!")
+            console.log("[Ever] The pages folder does not exist!")
             return;
         }
     } catch(err) {
-        console.log("[Shadows] An Error Occured while trying to compile pages: " + err)
+        console.log("[Ever] An Error Occured while trying to compile pages: " + err)
     }
 }
 
