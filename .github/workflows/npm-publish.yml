@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 16    
       - run: echo Building Core... && cd packages/zjs && npm test
-      - run: echo Building Compiler Core... && cd ../zjs-compiler-core && npm test
+      - run: echo Building Compiler Core... && cd packages/zjs-compiler-core && npm test
 
   publish-npm:
     needs: build
@@ -28,6 +28,6 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
       - run: echo Publishing Core... && cd packages/zjs && npm publish
-      - run: echo Publishing Compiler Core... && cd ../zjs-compiler-core && npm publish
+      - run: echo Publishing Compiler Core... && cd packages/zjs-compiler-core && npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
