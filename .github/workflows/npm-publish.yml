@@ -21,7 +21,7 @@ jobs:
       - name: Install Npm
         run: cd packages/moxtjs && npm i -g npm@9 && npm i -g pnpm@7.24.3
       - name: Creating .npmrc
-        run: cd packages/moxtjs-compiler-core && echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN\n@muxtjs:registry=https://npm.pkg.github.com\nalways-auth=true" >> ~/.npmrc
+        run: cd packages/moxtjs-compiler-core && echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
       - name: Publish package on NPM 📦
