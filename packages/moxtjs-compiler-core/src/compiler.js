@@ -1,7 +1,7 @@
-const fs = require('fs')
-const path = require('path');
-const fileCompiler = require("./pageCompiler.js")
+
+const pageCompiler = require("./pageCompiler.js")
 const logger = require("moxt.js/utils/logger")
+const fileUtils = require("moxt.js/utils/fileutils")
 const crypto = require('crypto');
 const MoxtJSBuild = require("./types/build").MoxtJSBuild
 
@@ -13,9 +13,14 @@ function compile(path) {
         currentBuild = new MoxtJSBuild(path)
 
         if(canCompile(path)) {
+            currentBuild.state = "RESETING_BUILD_FOLDER"
             resetBuildFolder()
-            writeDefaultPages()
-            compilePages(path)
+            currentBuild.state = "GATHERING_PAGES"
+            gatherPages()
+            currentBuild.state = "COMPILING_PAGES"
+            compilePages()
+            currentBuild.state = "CREATING_DEFAULT_PAGES"
+            addDefaultPages()
             logger.log("The Build was Sucessful")
             currentBuild.end(true)
             resolve(currentBuild)
@@ -58,60 +63,36 @@ function resetBuildFolder() {
     fs.mkdirSync("./public");
 }
 
-function writeDefaultPages() {
-    logger.log("Adding Default Pages")
-    fs.writeFile('./public/404.html', "MuxtJS - 404", err => {
-        if (err) {
-          logger.erorr("Could not add Default Pages: " + err)
-          return false;
-        }
-      });
+
+function gatherPages() {
+    if(fileUtils.doesExist(path.join(currentBuild.path, "pages"))) {
+        currentBuild.state = "GATHERING_PAGES"
+        logger.log("Gathering Pages...")
+
+        fileUtils.getFilesInFolder(path.join(currentBuild.path, "pages")).files.forEach(page => {
+            currentBuild.pages.push(path.join(path.join(currentBuild.path, "pages"),page))
+        })
+
+        currentBuild.state = "GATHERED_PAGES"
+        logger.log("Gathered " + currentBuild.pages.length + " pages")
+
+    }
+    else {
+        logger.warn("The Page Folder was not found! Skipping...")
+        return;
+    }
 }
 
-function compilePages(p) {
-    try {
-        if(fs.existsSync(p + "/pages")) {
-            logger.log("Detected Pages, Building Pages..")
-            fs.readdir(p + "/pages", function (err, files) {
-                if (err) {
-                     console.error("An Error while trying to compile pages: " + err)
-                } 
-                
-                let pages = []
+function compilePages() {
+    currentBuild.pages.forEach(page => {
+        let content = pageCompiler.compilePageToHTML(page);
+        fileUtils.writeFile(page, content)
+    })
+}
 
-                files.forEach(function (file) {
-                    if(file.endsWith(".js")  || file.endsWith(".ts") || file.endsWith(".tsx")) {
-                        pages.push(file)
-                    }
-                });
-
-                logger.info("Found " + pages.length + " pages")
-                
-                pages.forEach(page => {
-
-                    let p2 = path.join(path.resolve(p) + "/pages", page);
-                    
-                    let name = page.split(".")[0]
-
-                    fileCompiler.compilePageToHTML(p2)
-                    .then((data) => {
-                        fs.writeFile('./public/' + name + ".html", html, err => {
-                            if (err) {
-                              logger.error("Could not compile page " + name + "!")
-                            }
-                        });
-                    })
-
-                })
-
-            });
-        }
-        else {
-            console.warn("The Pages were not detected! Skipping...")
-            return true;
-        }
-    } catch(err) {
-        console.error("An Error Occured while compiling pages: " + err)
+function addDefaultPages() {
+    if(!currentBuild.pages.toString().includes("404")) {
+        fileUtils.writeFile("./public/404.html", "<html<body><h1>404 - MoxtJS</h1><body></html>")
     }
 }
 

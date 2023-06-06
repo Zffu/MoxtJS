@@ -7,6 +7,7 @@ class MoxtJSBuild {
         this.build_uuid = crypto.randomUUID();
         this.state = "CHEKING_CAN_COMPILE"
         this.build_sucess = false;
+        this.pages = []
     }
     end(sucess) {
         this.build_sucess = sucess;
