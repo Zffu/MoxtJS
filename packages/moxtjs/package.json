@@ -1,6 +1,6 @@
 {
     "name": "moxt.js",
-    "description": "@moxt.js",
+    "description": "MoxtJS is a NodeJS Framework to make websites",
     "version": "0.0.1-alpha",
     "main": "src/index.js",
     "license": "MIT",
