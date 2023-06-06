@@ -2,17 +2,23 @@ const fs = require('fs')
 const path = require('path');
 const fileCompiler = require("./pageCompiler.js")
 const logger = require("moxt.js/utils/logger")
+const crypto = require('crypto');
 
+var currentBuild = {}
 
 function compile(path) {
-    if(canCompile(path)) {
-        resetBuildFolder()
-        writeDefaultPages()
-        compilePages(path)
-        logger.log("The Build was Sucessful")
-    } else {
-        logger.error("The Website cannot be compiled! Exiting...")
-    }
+    let promise = new Promise((resolve, reject) => {
+        if(canCompile(path)) {
+            resetBuildFolder()
+            writeDefaultPages()
+            compilePages(path)
+            logger.log("The Build was Sucessful")
+            resolve()
+        } else {
+            logger.error("The Website cannot be compiled! Exiting...")
+        }
+    })
+    return promise;
 }
 
 
@@ -78,15 +84,16 @@ function compilePages(p) {
 
                     let p2 = path.join(path.resolve(p) + "/pages", page);
                     
-                    let html = fileCompiler.compilePageToHTML(p2)
-
                     let name = page.split(".")[0]
 
-                    fs.writeFile('./public/' + name + ".html", html, err => {
-                        if (err) {
-                          logger.error("Could not compile page " + name + "!")
-                        }
-                      });
+                    fileCompiler.compilePageToHTML(p2)
+                    .then((data) => {
+                        fs.writeFile('./public/' + name + ".html", html, err => {
+                            if (err) {
+                              logger.error("Could not compile page " + name + "!")
+                            }
+                        });
+                    })
 
                 })
 
