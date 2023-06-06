@@ -1,7 +1,7 @@
 {
     "name": "@moxtjs/compiler-core",
     "description": "The MoxtJS Compiler",
-    "version": "1.0.1-fix",
+    "version": "1.0.1-fix2",
     "main": "src/index.js",
     "license": "MIT",
     "repository": {
@@ -12,7 +12,7 @@
     "homepage": "https://zffu.ml",
     "types": "src/index.js",
     "files": [
-
+        "src/*"
     ],
     "scripts": {
         "test": "",

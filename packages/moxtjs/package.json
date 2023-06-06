@@ -1,7 +1,7 @@
 {
     "name": "moxt.js",
     "description": "MoxtJS is a NodeJS Framework to make websites",
-    "version": "0.0.1-alpha2",
+    "version": "0.0.1-alpha3",
     "author": {
         "name": "Zffu",
         "url": "zffu.ml",
@@ -17,7 +17,8 @@
     "homepage": "https://zffu.ml",
     "types": "src/index.js",
     "files": [
-
+        "src/*",
+        "utils/*"
     ],
     "bin": {
         "moxt": "src/bin/moxt.js"
