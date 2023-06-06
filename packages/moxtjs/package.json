@@ -2,6 +2,11 @@
     "name": "moxt.js",
     "description": "MoxtJS is a NodeJS Framework to make websites",
     "version": "0.0.1-alpha",
+    "author": {
+        "name": "Zffu",
+        "url": "zffu.ml",
+        "email": "zffumc@gmail.com"
+    },
     "main": "src/index.js",
     "license": "MIT",
     "repository": {
