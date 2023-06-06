@@ -6,7 +6,7 @@
     "license": "MIT",
     "repository": {
         "url": "https://github.com/Zffu/moxtjs",
-        "directory": "packages/moxtjs"
+        "directory": "packages/moxtjs-compiler-core"
     },
     "bugs": "https://github.com/Zffu/moxtjs/issues",
     "homepage": "https://zffu.ml",
