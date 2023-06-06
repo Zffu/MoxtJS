@@ -1,10 +1,12 @@
 #! /usr/bin/env node
 const path = require("path")
-const compiler = require("../compiler/compiler.js")
+const compiler = require("@moxt.js/compiler-core");
+const logger = require("../utils/logger")
+
 
 
 if(process.argv.length < 3) {
-    console.error("[Every] Invalid Command Usage! : every <command> [path]")
+    logger.error("Invalid Command Usage! Usage: moxt <command> [path]")
     return;
 }
 
@@ -12,14 +14,14 @@ const command = process.argv[2]
 
 if(command == "build") {
     if(process.argv.length != 4) {
-        console.error("[Every] Invalid Command Usage! : every build <path>")
+        logger.error("Invalid Command Usage! Usage: moxt build [path]")
         return;
     }
 
     let p = process.argv[3];
 
-    console.log("[Every] Compiling path " + p)
+    logger.info("Compiling path " + p)
 
-    compiler.compile(p)
+    compiler.compiler.compile(p)
         
 }
