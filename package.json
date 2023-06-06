@@ -1,0 +1,9 @@
+{
+    "name": "moxtjs-test",
+    "dependencies": {
+        "moxt.js": "^0.0.1-alpha"
+    },
+    "scripts": {
+        "build": "moxt build ./test/"
+    }
+}
