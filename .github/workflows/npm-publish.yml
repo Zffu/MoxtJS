@@ -21,11 +21,11 @@ jobs:
       - name: Install Npm
         run: cd packages/moxtjs && npm i -g npm@9 && npm i -g pnpm@7.24.3
       - name: Creating .npmrc
-        run: cd packages/moxtjs && echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
+        run: cd packages/moxtjs-compiler-core && echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN\n@muxtjs:registry=https://npm.pkg.github.com\nalways-auth=true" >> ~/.npmrc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
       - name: Publish package on NPM 📦
-        run: cd packages/moxtjs && npm publish
+        run: cd packages/moxtjs && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
 
@@ -46,11 +46,11 @@ jobs:
       - name: Install Npm
         run: cd packages/moxtjs-compiler-core && npm i -g npm@9 && npm i -g pnpm@7.24.3
       - name: Creating .npmrc
-        run: cd packages/moxtjs-compiler-core && echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
+        run: cd packages/moxtjs-compiler-core && echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN\n@muxtjs:registry=https://npm.pkg.github.com\nalways-auth=true" >> ~/.npmrc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
       - name: Publish package on NPM 📦
-        run: cd packages/moxtjs-compiler-core && npm publish
+        run: cd packages/moxtjs-compiler-core && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
 
