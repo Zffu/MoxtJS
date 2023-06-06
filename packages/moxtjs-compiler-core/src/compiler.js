@@ -3,11 +3,15 @@ const path = require('path');
 const fileCompiler = require("./pageCompiler.js")
 const logger = require("moxt.js/utils/logger")
 const crypto = require('crypto');
+const MoxtJSBuild = require("./types/build").MoxtJSBuild
 
-var currentBuild = {}
+var currentBuild = null;
 
 function compile(path) {
     let promise = new Promise((resolve, reject) => {
+
+        currentBuild = new MoxtJSBuild(path)
+
         if(canCompile(path)) {
             resetBuildFolder()
             writeDefaultPages()
