@@ -17,9 +17,12 @@ function compile(path) {
             writeDefaultPages()
             compilePages(path)
             logger.log("The Build was Sucessful")
-            resolve()
+            currentBuild.end(true)
+            resolve(currentBuild)
         } else {
             logger.error("The Website cannot be compiled! Exiting...")
+            currentBuild.end(false);
+            reject(currentBuild)
         }
     })
     return promise;
