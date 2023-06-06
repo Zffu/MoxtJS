@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 const path = require("path")
-const compiler = require("@moxt.js/compiler-core");
+const compiler = require("@moxtjs/compiler-core");
 const logger = require("../utils/logger")
 
 
