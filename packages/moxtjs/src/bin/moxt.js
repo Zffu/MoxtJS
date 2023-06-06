@@ -20,7 +20,7 @@ if(command == "build") {
 
     let p = process.argv[3];
 
-    logger.info("Compiling path " + p)
+    logger.log("Compiling path " + p)
 
     compiler.compiler.compile(p)
         
