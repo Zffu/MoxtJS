@@ -1,2 +1,2 @@
-export * from "./src/compiler"
-export * from "./src/pageCompiler"
+const compiler = require("./src/compiler")
+const pageCompiler = require("./src/pageCompiler")
