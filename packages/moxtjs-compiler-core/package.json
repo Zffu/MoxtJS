@@ -1,7 +1,7 @@
 {
     "name": "@moxtjs/compiler-core",
     "description": "The Compiler for the MoxtJS Web Framework",
-    "version": "1.0.1-fix7",
+    "version": "1.0.1-fix8",
     "main": "index.js",
     "license": "MIT",
     "repository": {
@@ -21,6 +21,6 @@
     "dependencies": {
         "yargs": "17.7.2",
         "typescript": "5.0.4",
-        "moxt.js": "^0.0.1"
+        "moxt.js": "^0.0.1-2"
     }
 }
