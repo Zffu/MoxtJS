@@ -22,6 +22,6 @@ if(command == "build") {
 
     logger.log("Compiling path " + p)
 
-    compiler.compiler.compile(p)
+    compiler.compile(p)
         
 }
