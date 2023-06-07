@@ -1,6 +1,5 @@
 <a name="readme-top"></a>
 
--->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -20,7 +19,7 @@
 
   <p align="center">
     A NodeJS framework to make websites
-    **WARN: ** MoxtJS is currently being build and should not be used in production right now.
+    WARNING:  MoxtJS is currently being build and should not be used in production right now.
     <br />
     <a href="https://github.com/Zffu/MoxtJS/wiki"><strong>Explore the docs »</strong></a>
     <br />
