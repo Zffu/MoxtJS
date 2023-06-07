@@ -1,8 +1,8 @@
 {
     "name": "@moxtjs/compiler-core",
     "description": "The MoxtJS Compiler",
-    "version": "1.0.1-fix2",
-    "main": "src/index.js",
+    "version": "1.0.1-fix3",
+    "main": "index.js",
     "license": "MIT",
     "repository": {
         "url": "https://github.com/Zffu/moxtjs",
