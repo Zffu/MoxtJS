@@ -1,6 +1,6 @@
 {
     "name": "@moxtjs/compiler-core",
-    "description": "The MoxtJS Compiler",
+    "description": "The Compiler for the MoxtJS Web Framework",
     "version": "1.0.1-fix6",
     "main": "index.js",
     "license": "MIT",
