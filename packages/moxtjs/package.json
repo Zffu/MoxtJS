@@ -1,7 +1,7 @@
 {
     "name": "moxt.js",
     "description": "MoxtJS is a NodeJS Framework to make websites",
-    "version": "0.0.1-2-alpha",
+    "version": "0.0.1-2-alpha2",
     "author": {
         "name": "Zffu",
         "url": "zffu.ml",
@@ -39,7 +39,7 @@
         "build": ""
     },
     "dependencies": {
-        "@moxtjs/compiler-core": "^1.0.1-fix8",
+        "@moxtjs/compiler-core": "^1.0.1-fix9",
         "chalk": "4.0.0",
         "typescript": "5.0.4",
         "yargs": "17.7.2"
