@@ -1,10 +1,10 @@
-const { findObjectsInObject } = require("moxt.js/utils/objectFinder")
+const objectFinder = require("moxt.js/utils/objectFinder")
 const logger = require("moxt.js/utils/logger")
 
 function compilePageToHTML(path) {
 
     let promise = new Promise((resolve, reject) => {
-        let functions = findObjectsInObject("function", require(path));
+        let functions = objectFinder.findObjectsInObject("function", require(path));
 
         if(functions.length == 0) {
             logger.warn("No Functions were found in the page " + path)

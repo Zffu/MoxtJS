@@ -7,8 +7,17 @@
         "url": "zffu.ml",
         "email": "zffumc@gmail.com"
     },
-    "categories": ["Themes", "Other", "Programming Languages"],
-    "keywords": ["moxtjs", "nodejs", "web", "framework"],
+    "categories": [
+        "Themes",
+        "Other",
+        "Programming Languages"
+    ],
+    "keywords": [
+        "moxtjs",
+        "nodejs",
+        "web",
+        "framework"
+    ],
     "main": "src/index.js",
     "license": "MIT",
     "repository": {
@@ -30,8 +39,9 @@
         "build": ""
     },
     "dependencies": {
-        "yargs": "17.7.2",
+        "@moxtjs/compiler-core": "^1.0.1-fix2",
+        "chalk": "4.0.0",
         "typescript": "5.0.4",
-        "@moxtjs/compiler-core": "^1.0.1-fix2"
+        "yargs": "17.7.2"
     }
 }
