@@ -7,6 +7,8 @@
         "url": "zffu.ml",
         "email": "zffumc@gmail.com"
     },
+    "categories": ["Themes", "Other", "Programming Languages"],
+    "keywords": ["moxtjs", "nodejs", "web", "framework"],
     "main": "src/index.js",
     "license": "MIT",
     "repository": {

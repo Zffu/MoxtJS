@@ -10,7 +10,7 @@
     },
     "bugs": "https://github.com/Zffu/moxtjs/issues",
     "homepage": "https://zffu.ml",
-    "types": "src/index.js",
+    "types": "index.js",
     "files": [
         "src/*"
     ],
