@@ -23,5 +23,11 @@ if(command == "build") {
     logger.log("Compiling path " + p)
 
     compiler.compiler.compile(p)
+    .then(data => {
+        logger.log("Build " + data.build_uuid + " finished in " + (data.start_timestamp - data.stop_timestamp) / 1000 + " seconds")
+    })
+    .catch(data => {
+        logger.error("The Build " + data.build_uuid + " could not be built sucessfully!")
+    })
         
 }
