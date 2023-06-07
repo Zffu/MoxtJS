@@ -1,7 +1,7 @@
 {
     "name": "@moxtjs/compiler-core",
     "description": "The MoxtJS Compiler",
-    "version": "1.0.1-fix5",
+    "version": "1.0.1-fix6",
     "main": "index.js",
     "license": "MIT",
     "repository": {
